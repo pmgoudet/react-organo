@@ -5,10 +5,11 @@ import Slogan from "../Slogan";
 
 const HeaderContainer = styled.header`
   background-image: url(${bg});
-  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #6278f7;
   height: 556px;
-  width: 100%;
-  background-color: aquamarine;
+  width: auto;
 `;
 
 function Header() {

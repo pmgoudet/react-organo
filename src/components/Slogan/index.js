@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-const SloganContainer = styled.h1`
-  font-size: 72px;
+const SloganContainer = styled.div`
+  margin-left: 10%;
+  font-size: 36px;
   color: #212121;
-
-  p {
-    font-size: 36px;
-  }
+  font-weight: 400;
 `;
 
 function Slogan() {
-  <SloganContainer>
-    <h1>Pessoas e times</h1>
-    <p>organizados em um só lugar!</p>
-  </SloganContainer>;
+  return (
+    <SloganContainer>
+      <h1>Pessoas e times</h1>
+      <p>organizados em um só lugar!</p>
+    </SloganContainer>
+  );
 }
 
 export default Slogan;
