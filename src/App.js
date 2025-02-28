@@ -1,4 +1,6 @@
 import Header from "./components/Header";
+import FormContainer from "./components/FormSection";
+import CardsSection from "./components/CardsSection";
 import styled from "styled-components";
 
 const AppContainer = styled.div`
@@ -10,6 +12,8 @@ function App() {
   return (
     <AppContainer>
       <Header />
+      <FormContainer />
+      <CardsSection />
     </AppContainer>
   );
 }
