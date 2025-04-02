@@ -21,11 +21,17 @@ const LabelContainer = styled.div`
   }
 `;
 
-function CampoTexto({ label, id, placeholder }) {
+
+function CampoTexto(props) {
+
+  const aoDigitado = (evento) => {
+    props.aoAlterado(evento.target.value)
+  }
+
   return (
     <div>
-      <LabelContainer for="nome">{label}</LabelContainer>
-      <InputContainer type="text" id={id} placeholder={placeholder} />
+      <LabelContainer>{props.label}</LabelContainer>
+      <InputContainer value={props.valor} onChange={aoDigitado} placeholder={props.placeholder} required={props.obrigatorio} />
     </div>
   );
 }
