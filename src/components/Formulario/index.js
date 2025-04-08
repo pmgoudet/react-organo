@@ -33,7 +33,7 @@ const times = [
   'Inovação e Gestão'
 ];
 
-function Formulario() {
+function Formulario(props) {
 
   const [nome, setNome] = useState('')
   const [cargo, setCargo] = useState('')
@@ -42,7 +42,13 @@ function Formulario() {
 
   const aoSalvar = (event) => {
     event.preventDefault();
-    console.log(nome, cargo, imagem, time)
+    props.aoColaboradorCadastrado({
+      nome,
+      cargo,
+      imagem,
+      time
+    })
+
   }
 
   return (

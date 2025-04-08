@@ -1,7 +1,9 @@
 import Header from "./components/Header";
-import FormContainer from "./components/FormSection";
+import Formulario from "./components/Formulario";
 import CardsSection from "./components/CardsSection";
 import styled from "styled-components";
+import { useState, useEffect } from "react";
+
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -10,10 +12,22 @@ const AppContainer = styled.div`
 `;
 
 function App() {
+
+  const [colaboradores, setColaboradores] = useState([])
+
+  const aoNovoColaboradorAdicionado = (colaborador) => {
+    console.log(colaborador)
+    setColaboradores([...colaboradores, colaborador])
+  }
+
+  useEffect(() => {
+    console.log(colaboradores);  // aqui, colaboradores terá o valor atualizado
+  }, [colaboradores]);
+
   return (
     <AppContainer>
       <Header />
-      <FormContainer />
+      <Formulario aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} />
       <CardsSection />
     </AppContainer>
   );
