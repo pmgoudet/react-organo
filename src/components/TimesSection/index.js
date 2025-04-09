@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Time from "../Time";
+import { times } from "../Formulario";
 
 const TituloH2 = styled.h2`
   color: #6278f7;
@@ -17,20 +18,16 @@ const LinhaH2 = styled.hr`
   box-sizing: border-box;
 `;
 
-function CardsSection() {
+function TimesSection({ colaboradores }) {
   return (
     <div>
       <TituloH2>Minha Organização:</TituloH2>
       <LinhaH2 />
-      <Time nome='Programação' />
-      <Time nome='FrontEnd' />
-      <Time nome='Data Science' />
-      <Time nome='Devops' />
-      <Time nome='UX e Design' />
-      <Time nome='Mobile' />
-      <Time nome='Inovação e Gestão' />
+      {times.map((time, index) => (
+        <Time colaboradores={colaboradores} key={index} nomeTime={time} />
+      ))}
     </div>
   );
 }
 
-export default CardsSection;
+export default TimesSection;

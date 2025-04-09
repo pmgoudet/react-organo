@@ -23,7 +23,7 @@ const FormContainer = styled.form`
   font-weight: 400;
 `;
 
-const times = [
+export const times = [
   'Programação',
   'Front-End',
   'Data Science',
@@ -38,7 +38,7 @@ function Formulario(props) {
   const [nome, setNome] = useState('')
   const [cargo, setCargo] = useState('')
   const [imagem, setImagem] = useState('')
-  const [time, setTime] = useState('')
+  const [time, setTime] = useState('Programação')
 
   const aoSalvar = (event) => {
     event.preventDefault();
@@ -49,6 +49,10 @@ function Formulario(props) {
       time
     })
 
+    setNome('');
+    setCargo('');
+    setImagem('')
+    setTime('Programação')
   }
 
   return (

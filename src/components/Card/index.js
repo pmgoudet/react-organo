@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 const CardContainer = styled.div`
   position: relative;
   width: 242px;
@@ -39,15 +40,29 @@ font-size: 20px;
 font-weight: 300;
 `
 
-function Card() {
+function Card(props) {
   return (
     <CardContainer>
-      <CardColor />
+      <CardColor {...props.cor} />
       <ImgContainer src="https://thispersondoesnotexist.com/" alt="Foto do colega" />
-      <CardTitle>Pedro Goudet</CardTitle>
-      <CardCargo>Desenvolvedor de software e instrutor</CardCargo>
+      <CardTitle>{props.nome}</CardTitle>
+      <CardCargo>{props.cargo}</CardCargo>
     </CardContainer>
   )
 }
 
+
 export default Card;
+
+
+// function CardsSection() {
+//   return (
+//     <div>
+//       <TituloH2>Minha Organização:</TituloH2>
+//       <LinhaH2 />
+//       {times.map((time, index) => (
+//         <Time key={index} nomeTime={time} />
+//       ))}
+//     </div>
+//   );
+// }

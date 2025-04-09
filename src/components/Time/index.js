@@ -13,13 +13,25 @@ const TituloH3 = styled.h3`
   margin: 20px
 `;
 
-function Time(props) {
+const CardsContainer = styled.div`
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+`
+
+function Time({ nomeTime, colaboradores }) {
   return (
     <TimeContainer>
-      <TituloH3>{props.nome}</TituloH3>
-      <Card />
+      <TituloH3>{nomeTime}</TituloH3>
+      <CardsContainer>
+        {colaboradores.map((colaborador, index) => (
+          <Card key={index} nome={colaborador.nome} cargo={colaborador.cargo} />
+        ))}
+      </CardsContainer>
     </TimeContainer>
   )
 }
 
 export default Time;
+

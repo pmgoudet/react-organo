@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import Formulario from "./components/Formulario";
-import CardsSection from "./components/CardsSection";
+import TimesSection from "./components/TimesSection";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 
@@ -13,22 +13,27 @@ const AppContainer = styled.div`
 
 function App() {
 
-  const [colaboradores, setColaboradores] = useState([])
+  const [colaboradores, setColaboradores] = useState([{
+    nome: 'Pedro Goudet',
+    cargo: 'devMaluco',
+    times: 'Programação'
+  }])
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
-    console.log(colaborador)
-    setColaboradores([...colaboradores, colaborador])
+    setColaboradores([...colaboradores, colaborador]);
   }
 
   useEffect(() => {
-    console.log(colaboradores);  // aqui, colaboradores terá o valor atualizado
+    console.log(colaboradores);
+    //  // aqui, colaboradores terá o valor atualizado
+
   }, [colaboradores]);
 
   return (
     <AppContainer>
       <Header />
       <Formulario aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} />
-      <CardsSection />
+      <TimesSection colaboradores={colaboradores} />
     </AppContainer>
   );
 }
