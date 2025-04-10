@@ -21,14 +21,26 @@ const CardsContainer = styled.div`
 `
 
 function Time({ nomeTime, corFundo, corCard, colaboradores }) {
+
+  const colaboradoresFiltrados = colaboradores.filter(colaborador => colaborador.time === nomeTime);
+
+  if (colaboradoresFiltrados.length === 0) {
+    return null;
+  }
+
   return (
-    <TimeContainer $cor={corFundo}>
+    <TimeContainer $cor={corFundo} >
       <TituloH3>{nomeTime}</TituloH3>
-      <CardsContainer >
-        {colaboradores.map((colaborador, index) => (
-          <Card key={index} nome={colaborador.nome} cargo={colaborador.cargo} />
+      <CardsContainer>
+        {colaboradoresFiltrados.map((colaborador, index) => (
+          <Card
+            key={index}
+            nome={colaborador.nome}
+            cargo={colaborador.cargo}
+          />
         ))}
       </CardsContainer>
+
     </TimeContainer>
   )
 }

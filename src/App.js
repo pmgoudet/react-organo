@@ -55,7 +55,7 @@ function App() {
     {
       nome: 'Pedro Goudet',
       cargo: 'devMaluco',
-      times: 'Programação'
+      time: 'Programação'
     }
   ])
 
@@ -63,10 +63,10 @@ function App() {
     setColaboradores([...colaboradores, colaborador]);
   }
 
-  useEffect(() => {
-    console.log(colaboradores); // aqui, colaboradores terá o valor atualizado
+  // useEffect(() => {
+  //   console.log(colaboradores); // aqui, colaboradores terá o valor atualizado
 
-  }, [colaboradores]);
+  // }, [colaboradores]);
 
   return (
     <AppContainer>

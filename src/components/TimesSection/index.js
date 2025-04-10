@@ -20,13 +20,18 @@ const LinhaH2 = styled.hr`
 function TimesSection({ colaboradores, times }) {
 
   return (
-    <div>
+    <section>
       <TituloH2>Minha Organização:</TituloH2>
       <LinhaH2 />
-      {times.map((time, index) => (
-        <Time colaboradores={colaboradores} key={index} nomeTime={time.nome} corFundo={time.corFundo} corCard={time.corCard} />
+      {times.map((time) => (
+        <Time
+          colaboradores={colaboradores}
+          key={time.nome}
+          nomeTime={time.nome}
+          corFundo={time.corFundo}
+          corCard={time.corCard} />
       ))}
-    </div>
+    </section>
   );
 }
 
