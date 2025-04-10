@@ -41,13 +41,13 @@ font-size: 20px;
 font-weight: 300;
 `
 
-function Card(props) {
+function Card({ corCard, nome, cargo }) {
   return (
     <CardContainer>
-      <CardColor {...props.cor} />
+      <CardColor cor={corCard} />
       <ImgContainer src="https://thispersondoesnotexist.com/" alt="Foto do colega" />
-      <CardTitle>{props.nome}</CardTitle>
-      <CardCargo>{props.cargo}</CardCargo>
+      <CardTitle>{nome}</CardTitle>
+      <CardCargo>{cargo}</CardCargo>
     </CardContainer>
   )
 }

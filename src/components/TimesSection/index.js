@@ -29,7 +29,8 @@ function TimesSection({ colaboradores, times }) {
           key={time.nome}
           nomeTime={time.nome}
           corFundo={time.corFundo}
-          corCard={time.corCard} />
+          corCard={time.corCard}
+        />
       ))}
     </section>
   );

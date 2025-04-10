@@ -37,6 +37,7 @@ function Time({ nomeTime, corFundo, corCard, colaboradores }) {
             key={index}
             nome={colaborador.nome}
             cargo={colaborador.cargo}
+            corCard={corCard}
           />
         ))}
       </CardsContainer>
