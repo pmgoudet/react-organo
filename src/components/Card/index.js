@@ -35,7 +35,7 @@ color: #6278f7;
 font-size: 25px;
 `
 
-const CardCargo = styled.p`
+const CardCargo = styled.h5`
 font-size: 20px;
 font-weight: 300;
 `
@@ -53,16 +53,3 @@ function Card(props) {
 
 
 export default Card;
-
-
-// function CardsSection() {
-//   return (
-//     <div>
-//       <TituloH2>Minha Organização:</TituloH2>
-//       <LinhaH2 />
-//       {times.map((time, index) => (
-//         <Time key={index} nomeTime={time} />
-//       ))}
-//     </div>
-//   );
-// }

@@ -20,16 +20,14 @@ const ListaSuspensa = (props) => {
       <label>{props.label}</label>
       <select
         required={props.obrigatorio}
-        onChange={evento => props.aoAlterado(evento.target.value)} value={props.value}
+        onChange={evento => props.aoAlterado(evento.target.value)} value={props.valor}
       >
-        {props.itens.map(item => <option key={item}>{item}
+        {props.itens.map((item) => <option key={item.nome}>{item.nome}
         </option>)}
       </select>
     </ListaSuspensaContainer>
   );
 }
 
+
 export default ListaSuspensa;
-
-
-
